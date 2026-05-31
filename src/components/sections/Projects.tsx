@@ -16,10 +16,12 @@ function ProjectCard({
   project,
   index,
 }: {
-  project: (typeof projects)[0];
+  project: (typeof projects)[number];
   index: number;
 }) {
   const [expanded, setExpanded] = useState(false);
+
+  if (!project) return null;
 
   return (
     <motion.div
@@ -165,13 +167,17 @@ export default function Projects() {
         />
 
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={i}
-            />
-          ))}
+         {projects.map((project, i) => {
+      if (!project) return null;
+
+  return (
+    <ProjectCard
+      key={project.id}
+      project={project}
+      index={i}
+    />
+  );
+})}
         </div>
       </div>
     </section>
