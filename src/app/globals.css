@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap");
+
+:root {
+  --background: 222 47% 4%;
+  --foreground: 213 31% 91%;
+  --primary: 217 91% 65%;
+  --primary-foreground: 222 47% 4%;
+  --secondary: 222 47% 8%;
+  --secondary-foreground: 213 31% 91%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215 20% 55%;
+  --accent: 217 91% 65%;
+  --accent-foreground: 222 47% 4%;
+  --border: 217 33% 15%;
+  --card: 222 47% 6%;
+  --card-foreground: 213 31% 91%;
+  --radius: 0.5rem;
+
+  --font-syne: "Syne", sans-serif;
+  --font-space-mono: "Space Mono", monospace;
+
+  /* custom */
+  --accent-blue: #4f8ef7;
+  --accent-purple: #8b5cf6;
+  --accent-green: #06d6a0;
+  --bg-primary: #050709;
+  --bg-secondary: #0a0d14;
+  --bg-tertiary: #0f1420;
+  --text-primary: #e8edf5;
+  --text-secondary: #8892a4;
+  --text-muted: #4a5568;
+  --border-color: rgba(79, 142, 247, 0.15);
+}
+
+.light {
+  --background: 0 0% 98%;
+  --foreground: 222 47% 10%;
+  --primary: 217 91% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 10%;
+  --muted: 210 40% 93%;
+  --muted-foreground: 215 20% 40%;
+  --accent: 217 91% 55%;
+  --accent-foreground: 0 0% 100%;
+  --border: 214 32% 85%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 10%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-syne);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(79, 142, 247, 0.25);
+  color: hsl(var(--foreground));
+}
+
+/* Utility classes */
+.font-mono {
+  font-family: var(--font-space-mono), monospace;
+}
+
+.glass {
+  background: rgba(15, 20, 32, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4f8ef7 0%, #8b5cf6 50%, #06d6a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #4f8ef7, #8b5cf6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.grid-bg {
+  background-image: linear-gradient(
+      rgba(79, 142, 247, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(79, 142, 247, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 30px rgba(79, 142, 247, 0.2), 0 0 60px rgba(79, 142, 247, 0.1);
+}
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.2), 0 0 60px rgba(139, 92, 246, 0.1);
+}
+.text-glow {
+  text-shadow: 0 0 20px rgba(79, 142, 247, 0.5);
+}
+
+/* Section padding */
+.section-padding {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* Cursor blink */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: cursorBlink 1s step-end infinite;
+}
+
+/* Contribution graph */
+.contrib-cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  transition: background 0.15s, transform 0.15s;
+}
+.contrib-cell:hover {
+  transform: scale(1.3);
+}
+
+/* Smooth transitions for theme */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+a, button {
+  transition-property: all;
+  transition-duration: 0.2s;
+}
