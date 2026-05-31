@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tejas Kalal — Developer Portfolio
 
 A modern, premium, recruiter-focused personal developer portfolio built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
@@ -112,3 +113,6 @@ CMD ["node", "server.js"]
 ## License
 
 MIT — feel free to use as your own portfolio base.
+=======
+# portfolio
+>>>>>>> 1e7811d62c2319a1538bba5476dddf07dc2bcfce
