@@ -147,7 +147,35 @@ export const projects = [
   accentColor: "#06b6d4",
   github: "https://github.com/tejaskalal/devops-project-1.git",
   demo: "#",
-},,
+},
+{
+  id: "05",
+  title: "Self-Healing Deployment Engine",
+  category: "DevOps",
+  description:
+    "A Kubernetes-based deployment engine on AWS EKS that automatically recovers from pod failures using liveness and readiness probes, with canary releases via Argo Rollouts and infrastructure provisioned through Terraform.",
+  features: [
+    "Automatic pod recovery with health probes",
+    "Canary deployments via Argo Rollouts",
+    "AWS EKS cluster provisioned with Terraform",
+    "Dockerized Node.js application",
+    "LoadBalancer service with progressive traffic shifting",
+  ],
+  tech: [
+    "AWS",
+    "Terraform",
+    "Kubernetes",
+    "Argo Rollouts",
+    "Docker",
+    "Node.js",
+    "EKS",
+    "Grafana",
+  ],
+  gradient: "from-violet-500/10 to-purple-500/10",
+  accentColor: "#8b5cf6",
+  github: "https://github.com/tejaskalal/self-healing-deployment-engine.git",
+  demo: "#",
+},
 ];
 
 export const timeline = [
