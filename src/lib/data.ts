@@ -7,7 +7,7 @@ export const personalInfo = {
   email: "tejaskalal@email.com",
   github: "https://github.com/tejaskalal",
   linkedin: "https://linkedin.com/in/tejaskalal",
-  resumeUrl: "https://drive.google.com/file/d/1jxgx9KDZYKFA8106N4cLSh5P4jAf2HP6/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1y-cQ0kgQfUnI2Rle2VWT9kTJcIfTLu4U/view?usp=sharing",
   bio: `I'm a passionate Full Stack Developer from Maharashtra, India, specializing in the
   MERN stack with a growing focus on DevOps and cloud infrastructure. My journey started
   with building web applications and has evolved into deploying distributed AI inference
