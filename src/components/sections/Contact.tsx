@@ -48,18 +48,55 @@ export default function Contact() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSent(true);
-      setForm({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSent(false), 4000);
-    }, 1200);
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
+  if (!form.name || !form.email || !form.message) return;
+
+  setLoading(true);
+
+  try {
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          subject: form.subject || "New Portfolio Enquiry",
+          message: form.message,
+        }),
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.success) {
+      setSent(true);
+
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => setSent(false), 4000);
+    } else {
+      alert("Failed to send message. Please try again.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <section id="contact" className="section-padding bg-[#050709] px-6 md:px-10">
       <div className="max-w-6xl mx-auto">
