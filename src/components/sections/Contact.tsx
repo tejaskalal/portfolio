@@ -57,7 +57,8 @@ export default function Contact() {
 
   try {
     const response = await fetch(
-      "https://api.web3forms.com/submit",
+      // "https://api.web3forms.com/submit",
+      "https://formspree.io/f/mjgdnbpz",
       {
         method: "POST",
         headers: {
@@ -65,7 +66,7 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          // access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           name: form.name,
           email: form.email,
           subject: form.subject || "New Portfolio Enquiry",
@@ -76,7 +77,7 @@ export default function Contact() {
 
     const result = await response.json();
 
-    if (result.success) {
+    if (result.ok) {
       setSent(true);
 
       setForm({
