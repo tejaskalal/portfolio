@@ -7,7 +7,7 @@ export const personalInfo = {
   email: "tejaskalal@email.com",
   github: "https://github.com/tejaskalal",
   linkedin: "https://linkedin.com/in/tejaskalal",
-  resumeUrl: "https://drive.google.com/file/d/13VXrWFDqrqr_C0Ij8NyFHN0YaPHukVke/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1egtY5Z9gwRj5mw3oVdlx_kU0KvMOFX-S/view?usp=sharing",
   bio: `I'm a passionate Full Stack Developer from Maharashtra, India, specializing in the
   MERN stack with a growing focus on DevOps and cloud infrastructure. My journey started
   with building web applications and has evolved into deploying distributed AI inference
@@ -26,7 +26,7 @@ export const personalInfo = {
 export const stats = [
   { label: "Projects Built", value: 10, suffix: "+" },
   { label: "Technologies", value: 20, suffix: "+" },
-  { label: "DevOps Tools", value: 8, suffix: "+" },
+  { label: "DevOps Tools", value: 15, suffix: "+" },
 ];
 
 export const skills = [
@@ -46,7 +46,7 @@ export const skills = [
     category: "DevOps",
     icon: "⬡",
     color: "green",
-    items: ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "ArgoCD", "Linux" , "Jenkins" , "Ansible"],
+    items: ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "ArgoCD", "Linux" , "Jenkins" , "Ansible","Bash Scripting " ,"Prometheus" , "Grafana"],
   },
   {
     category: "Database",
